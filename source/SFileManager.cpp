@@ -18,5 +18,5 @@ void SFileManager::SaveFile(char* path)
 
 char* SFileManager::LoadFile(char* path)
 {
-
+	return nullptr;
 }

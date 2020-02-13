@@ -2,7 +2,7 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QPlainTextEdit>
-#include "SlapMainWindowFileMenu.h"
+#include "SMainWindowFileMenu.h"
 
 
 /*****************************************************************************************************/
