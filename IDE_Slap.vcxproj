@@ -59,6 +59,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <AdditionalIncludeDirectories>E:\Limitless\SlapIDE\IDE_Slap\IDE_Slap;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -88,9 +89,15 @@
   <ItemGroup>
     <ClCompile Include="source\IDE_Slap.cpp" />
     <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\SFileManager.cpp" />
+    <ClCompile Include="source\SMainWindowFileMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="source\IDE_Slap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\SFileManager.h" />
+    <ClInclude Include="source\SMainWindowFileMenu.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
