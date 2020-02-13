@@ -1,4 +1,7 @@
 #pragma once
+
+#include <string>
+
 class SFileManager
 {
 public:
@@ -6,7 +9,7 @@ public:
 	~SFileManager();
 
 	static void SaveFile(char* path);
-	static char* LoadFile(char* path);
+	static std::wstring LoadFile(std::string path);
 };
 
 
