@@ -5,6 +5,9 @@
 #include "SMainWindowFileMenu.h"
 #include "SFileManager.h"
 
+//static IDE_Slap* g_instance = nullptr;
+ QPlainTextEdit* IDE_Slap::MainTextEditor = nullptr;
+
 /*****************************************************************************************************/
 IDE_Slap::IDE_Slap(QWidget *parent)
 	: QMainWindow(parent)
@@ -14,13 +17,9 @@ IDE_Slap::IDE_Slap(QWidget *parent)
 	QMenuBar* mainWindowbar = menuBar();
 	mainWindowbar->addMenu(new SMainWindowFileMenu());
 
-	MainTextEditor = std::make_shared<QPlainTextEdit>(new QPlainTextEdit());
+	IDE_Slap::MainTextEditor = new QPlainTextEdit();
 
-	MainTextEditor->clear();
-	//SFileManager::SaveFile("Test.txt");
-	MainTextEditor->insertPlainText(QString::fromStdWString(SFileManager::LoadFile("Test.txt")));
-
-	setCentralWidget(MainTextEditor.get());
+	setCentralWidget(IDE_Slap::MainTextEditor);
 	setWindowTitle(tr("SlapIDE"));
-}
 
+}

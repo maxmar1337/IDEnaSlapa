@@ -12,5 +12,7 @@ private:
 	void OnSave();
 	void OnLoad();
 	void OnExit();
+
+	QString ActiveFilePath;
 };
 

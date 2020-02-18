@@ -8,8 +8,8 @@ public:
 	SFileManager();
 	~SFileManager();
 
-	static void SaveFile(char* path);
-	static std::wstring LoadFile(std::string path);
+	static void SaveFile(std::wstring& string, std::wstring& path);
+	static std::wstring LoadFile(std::wstring& path);
 };
 
 

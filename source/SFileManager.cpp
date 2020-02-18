@@ -3,29 +3,44 @@
 #include <fstream>
 #include <QString>
 
+#include <locale>
+#include <codecvt>
 
+#include <cstdio>  // for _fileno
+#include <io.h>    // for _setmode
+#include <fcntl.h> // for _O_U16TEXT
+
+
+using namespace std;
+
+/**********************************************************************************/
 SFileManager::SFileManager()
 {
 }
 
-
+/**********************************************************************************/
 SFileManager::~SFileManager()
 {
 }
 
-void SFileManager::SaveFile(char* path)
+/**********************************************************************************/
+void SFileManager::SaveFile(std::wstring& text, std::wstring& path)
 {
-	std::ofstream ofs(path);
+	std::wofstream ofs(path);
 
-	ofs << "test" << std::endl;
-	ofs.close();
+	if (ofs)
+	{
+		ofs << text << std::endl;
+		ofs.close();
+	}
 }
 
-std::wstring SFileManager::LoadFile(std::string path)
+/**********************************************************************************/
+std::wstring SFileManager::LoadFile(std::wstring& path)
 {
 	std::wifstream ifs(path);
 	std::wstring fileText;
-	QString qFileText;
+
 	while (ifs)
 	{
 		std::wstring inputText;
